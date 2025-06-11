@@ -9,6 +9,7 @@ export default function QuickSearchBar() {
     e.preventDefault();
     if (query.trim()) {
       navigate(`/results?q=${encodeURIComponent(query.trim())}`);
+      setQuery("")
     }
   };
 

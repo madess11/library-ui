@@ -3,18 +3,39 @@ import QuickSearchBar from "./QuickSearchBar";
 
 export default function Header() {
   return (
-    <header className="bg-white shadow-sm border-b">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <Link to="/" className="text-2xl font-bold text-blue-700 tracking-tight">
+    <header className="bg-white shadow-md border-b sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Logo */}
+        <Link
+          to="/"
+          className="text-3xl font-extrabold text-blue-700 tracking-wide hover:text-blue-800 transition"
+          aria-label="Aller à la page d'accueil"
+        >
           Médiathèque
         </Link>
 
-        <nav className="flex gap-6 text-gray-600 text-sm font-medium">
-          <Link to="/" className="hover:text-blue-600">Accueil</Link>
-          <Link to="/search" className="hover:text-blue-600">Recherche avancée</Link>
+        {/* Navigation */}
+        <nav className="flex flex-wrap gap-8 text-gray-700 text-base font-semibold">
+          <Link
+            to="/"
+            className="relative group"
+          >
+            Accueil
+            <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-[2px] bg-blue-600"></span>
+          </Link>
+          <Link
+            to="/search"
+            className="relative group"
+          >
+            Recherche avancée
+            <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-[2px] bg-blue-600"></span>
+          </Link>
         </nav>
 
-        <QuickSearchBar />
+        {/* Quick Search Bar */}
+        <div className="w-full max-w-xs md:max-w-sm">
+          <QuickSearchBar />
+        </div>
       </div>
     </header>
   );
