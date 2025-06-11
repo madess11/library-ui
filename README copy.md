@@ -9,8 +9,6 @@
 ## Démo
 
  En local : `npm run dev`  
- En ligne (à héberger toi-même)
-
 ---
 
 ## Tech Stack
